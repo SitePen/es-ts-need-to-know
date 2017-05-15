@@ -1,0 +1,50 @@
+{
+  "name": "es-ts-need-to-know",
+  "version": "1.0.0",
+  "description": "Live coding for ES6+ and TypeScript Need to Know Presentation",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SitePen/es-ts-need-to-know.git"
+  },
+  "author": "Kitson Kelly <kkelly@sitepen.com>",
+  "license": "BSD-3-Clause",
+  "bugs": {
+    "url": "https://github.com/SitePen/es-ts-need-to-know/issues"
+  },
+  "homepage": "https://github.com/SitePen/es-ts-need-to-know#readme",
+  "devDependencies": {
+    "@dojo/core": "^2.0.0-beta1.3",
+    "@dojo/loader": "beta1",
+    "@types/glob": "^5.0.30",
+    "@types/grunt": "^0.4.21",
+    "@types/jsdom": "^2.0.30",
+    "@types/node": "^6.0.0",
+    "codecov.io": "^0.1.6",
+    "glob": "^7.1.1",
+    "grunt": "^1.0.1",
+    "grunt-auto-install": "^0.3.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
+    "grunt-ts": "^6.0.0-beta.15",
+    "grunt-tslint": "^5.0.1",
+    "intern": "^3.4.3",
+    "jsdom": "^10.1.0",
+    "postcss-cssnext": "^2.10.0",
+    "postcss-import": "^9.1.0",
+    "postcss-modules": "^0.7.0",
+    "remap-istanbul": "^0.9.5",
+    "ts-node": "^3.0.2",
+    "tslint": "^5.1.0",
+    "typescript": "^2.3.2"
+  },
+  "dependencies": {
+    "@dojo/has": "beta1",
+    "@dojo/shim": "beta1",
+    "moment": "^2.18.1"
+  }
+}
