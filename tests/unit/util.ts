@@ -1,6 +1,6 @@
 import * as registerSuite from 'intern!object';
 import * as assert from 'intern/chai!assert';
-import { delay, isThenable } from '../../src/util';
+import { delay, isPromiseLike } from '../../src/util';
 
 registerSuite({
 	name: 'util',
@@ -76,12 +76,12 @@ registerSuite({
 		}
 	},
 
-	'isThenable()'() {
-		assert.isTrue(isThenable({ then() {} }));
-		assert.isTrue(isThenable(new Promise(() => {})));
-		assert.isFalse(isThenable(null));
-		assert.isFalse(isThenable('foo'));
-		assert.isFalse(isThenable(2));
-		assert.isFalse(isThenable(undefined));
+	'isPromiseLike()'() {
+		assert.isTrue(isPromiseLike({ then() {} }));
+		assert.isTrue(isPromiseLike(new Promise(() => {})));
+		assert.isFalse(isPromiseLike(null));
+		assert.isFalse(isPromiseLike('foo'));
+		assert.isFalse(isPromiseLike(2));
+		assert.isFalse(isPromiseLike(undefined));
 	}
 });

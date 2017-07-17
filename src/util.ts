@@ -1,11 +1,5 @@
-import Promise from '@dojo/shim/Promise';
-
-export interface Thenable<T> {
-	then<U>(onFulfilled?: ((value: T) => (U | Thenable<U> | undefined)) | undefined, onRejected?: (reason: Error) => void): Promise<U>;
-}
-
 export interface OriginalFunction<T> {
-	(...args: any[]): Thenable<T> | T;
+	(...args: any[]): PromiseLike<T> | T;
 }
 
 export interface PromisedFunction<T> {
@@ -32,7 +26,7 @@ export function delay<T>(callback: OriginalFunction<T>, delay: number, thisArg?:
 					reject(e);
 					return;
 				}
-				if (isThenable<any>(result)) {
+				if (isPromiseLike<any>(result)) {
 					return result.then(resolve, reject);
 				}
 				resolve(result);
@@ -46,6 +40,6 @@ export function delay<T>(callback: OriginalFunction<T>, delay: number, thisArg?:
  * `function`)
  * @param value The value to guard against
  */
-export function isThenable<T>(value: any): value is Thenable<T> {
+export function isPromiseLike<T>(value: any): value is PromiseLike<T> {
 	return Boolean(value && typeof value === 'object' && 'then' in value && typeof value.then === 'function');
 }
