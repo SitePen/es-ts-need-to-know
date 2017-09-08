@@ -1,0 +1,31 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "node",
+			"request": "launch",
+			"name": "Test (unit in NodeJS)",
+			"program": "${workspaceRoot}/node_modules/.bin/intern-client",
+			"args": [
+				"reporters=${workspaceRoot}/support/intern/Reporter",
+				"config=dev/tests/intern",
+				"excludeInstrumentation=."
+			],
+			"preLaunchTask": "default"
+		}, {
+			"type": "chrome",
+			"request": "launch",
+			"name": "Test (unit in Chrome)",
+			"url": "http://github.local/es-ts-need-to-know/node_modules/intern/client.html?config=dev/tests/intern",
+			"webRoot": "${workspaceRoot}/..",
+			"preLaunchTask": "default"
+		}, {
+			"type": "chrome",
+			"request": "launch",
+			"name": "Launch",
+			"url": "http://github.local/es-ts-need-to-know/dev/src",
+			"webRoot": "${workspaceRoot}/..",
+			"preLaunchTask": "default"
+		}
+	]
+}

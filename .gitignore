@@ -1,4 +1,5 @@
 /.tscache
+!/.vscode
 /dev
 /dist
 /html-report
