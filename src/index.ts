@@ -17,7 +17,7 @@ function clickMeClick(evt: MouseEvent) {
 	const clickMeButton = evt.target as HTMLButtonElement;
 	clickMeButton.setAttribute('disabled', 'disabled');
 
-	setGreetingText('Hello Enterprise JavaScript Summit!')
+	setGreetingText('Hello, FRBNY UI Summit!')
 		.then(function () {
 			clickMeButton.removeAttribute('disabled');
 		});

@@ -31,7 +31,7 @@ registerSuite({
 		clickMeButton.dispatchEvent(event);
 
 		setTimeout(dfd.callback(() => {
-			assert.strictEqual(greetingH2.textContent, 'Hello Enterprise JavaScript Summit!');
+			assert.strictEqual(greetingH2.textContent, 'Hello FRBNY UI Summit');
 			document.body.removeChild(greetingH2);
 			document.body.removeChild(clickMeButton);
 		}), 2500);
