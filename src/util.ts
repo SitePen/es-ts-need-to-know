@@ -44,6 +44,12 @@ export function isPromiseLike<T>(value: any): value is PromiseLike<T> {
 	return Boolean(value && typeof value === 'object' && 'then' in value && typeof value.then === 'function');
 }
 
+/**
+ * A helper function that accepts a generator function and iterates over it,
+ * calling back into the function each time it's asynchronous value has been received,
+ * effectively showing the underlying syntax for async/await.
+ * @param genFn The generator function to call through
+ */
 export function spawn(genFn: () => Iterator<any>): void {
 	const iterator = genFn();
 

@@ -1,3 +1,9 @@
+import * as moment from 'moment';
+
+/**
+ * API key for newsapi.org
+ * Don't worry, I'll change it after this ;-)
+ */
 const API_KEY = '2b88a66af2114afcb1f736a302d51998';
 
 export interface Article {
@@ -23,7 +29,8 @@ export enum NewsSource {
 	WAPO = 'the-washington-post',
 	HN = 'hacker-news',
 	TNW = 'the-next-web',
-	VERGE = 'the-verge'
+	VERGE = 'the-verge',
+	ARS = 'ars-technica'
 }
 
 export function requestNews(source: NewsSource, sortType: SortType = 'latest', callback: (articles: Article[]) => void, errorCallback?: (error: any) => void): void {
@@ -50,4 +57,27 @@ export function fetchNews(source: NewsSource, sortType: SortType = 'latest'): Pr
 	}).then((json: ArticlesResponse) => {
 		return json.articles;
 	});
+}
+
+export function renderArticle(article: Article): HTMLElement {
+	const div = document.createElement('div');
+	div.classList.add('article');
+	div.innerHTML = `
+	<div class="image">
+		<img src="${article.urlToImage}" />
+	</div>
+	<div class="content">
+		<div class='header'>
+			<a href="${article.url}">${article.title}</a>
+		</div>
+		<div class="meta date">
+			${moment(new Date(article.publishedAt)).startOf('day').fromNow()}
+		</div>
+		<div class="meta description">
+			<p>${article.description}</p>
+		</div>
+	</div>
+	`;
+
+	return div;
 }
