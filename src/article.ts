@@ -34,7 +34,7 @@ export enum NewsSource {
 }
 
 export function requestNews(source: NewsSource, sortType: SortType = 'latest', callback: (articles: Article[]) => void, errorCallback?: (error: any) => void): void {
-	const url = `https://newsapi.org/v1/articles?source=${source}&sortBy=top&apiKey=${API_KEY}`;
+	const url = `https://newsapi.org/v1/articles?source=${source}&sortBy=${sortType}&apiKey=${API_KEY}`;
 	const xhr = new XMLHttpRequest();
 	xhr.onreadystatechange = function () {
 		if (xhr.readyState === 4) {
