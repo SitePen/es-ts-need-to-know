@@ -85,21 +85,14 @@
 </head>
 <body>
 	<h1>ES6+ and TypeScript: What You Need to Know</h1>
-	<h2 id="greeting">[ TODO: Replace Me ]</h2>
-	<button type="button" name="click_me" id="click_me" disabled>Click Me!</button>
-	<!-- <button type="button" name="load_articles" id="load_articles" disabled>Load Articles</button> -->
+	<button type="button" name="load_articles" id="load_articles" disabled>Load Articles</button>
 
 	<div id="articles"></div>
-
-	<!-- Loading and configuring the module loader -->
-	<script src="../../node_modules/@dojo/loader/loader.min.js"></script>
+	<script src="node_modules/@dojo/loader/loader.min.js"></script>
 	<script>
 		require.config({
 			packages: [
-				{ name: '@dojo', location: '../../node_modules/@dojo' },
-				{ name: 'dojo', location: '../../node_modules/intern/browser_modules/dojo' },
-				{ name: 'moment', location: '../../node_modules/moment', main: 'moment' },
-				{ name: 'src', location: '.', main: 'index' }
+				{ name: 'src', location: 'src/', main: 'index' }
 			]
 		});
 
