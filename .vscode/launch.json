@@ -26,6 +26,13 @@
 			"url": "http://rugen.local/es-ts-need-to-know/dev/src",
 			"webRoot": "${workspaceRoot}/..",
 			"preLaunchTask": "default"
+		}, {
+			"type": "chrome",
+			"request": "launch",
+			"name": "Launch JS",
+			"url": "http://rugen.local/es-ts-need-to-know/",
+			"webRoot": "${workspaceRoot}/..",
+			"preLaunchTask": "default"
 		}
 	]
 }

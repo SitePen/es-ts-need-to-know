@@ -15,6 +15,11 @@ define([
 		this.articles = articles || [];
 	}
 
+	ArticlesComponent.prototype.setArticles = function (articles) {
+		this.articles = articles;
+		this.render();
+	};
+
 	ArticlesComponent.prototype.render = function() {
 		this.domNode.innerHTML = '';
 
@@ -24,11 +29,6 @@ define([
 		}, this);
 
 		return this.domNode;
-	};
-
-	ArticlesComponent.prototype.setArticles = function (articles) {
-		this.articles = articles;
-		this.render();
 	};
 
 	ArticlesComponent.prototype.renderArticle = function (article) {
