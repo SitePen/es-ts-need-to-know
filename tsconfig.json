@@ -19,7 +19,8 @@
 		"target": "es5",
 		"types": [
 			"intern"
-		]
+		],
+		"allowJs": true
 	},
 	"include": [
 		"./src/**/*.ts",

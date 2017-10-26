@@ -5,7 +5,7 @@ export = function(grunt: IGrunt) {
 		dev: {
 			expand: true,
 			cwd: '.',
-			src: [ '{src,tests}/**/*.{html,css,json}' ],
+			src: [ '{src,tests}/**/*.{html,css,json,js}' ],
 			dest: '<%= devDirectory %>'
 		},
 
