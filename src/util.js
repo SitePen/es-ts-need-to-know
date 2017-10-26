@@ -3,7 +3,8 @@ define([
 ], function (exports) {
 	exports.toRelativeDate = function (isoString) {
 		var date = new Date((isoString || '').replace(/-/g, '/').replace(/[TZ]/g, ' '));
-		var diff = (((Date.now()) - date.getTime()) / 1000);
+		var now = Date.now() + (new Date()).getTimezoneOffset() * 60000;
+		var diff = (now- date.getTime()) / 1000;
 		var dayDiff = Math.floor(diff / 86400);
 
 		if (isNaN(dayDiff) || dayDiff < 0 || dayDiff >= 31) {
