@@ -37,7 +37,7 @@ define([
 	function loadArticles() {
 		var articlesDiv = document.getElementById('articles');
 		var component = new ArticlesComponent(articlesDiv);
-		fetchArticles(newsSource.ARS, function (articles) {
+		fetchArticles(newsSource.VERGE, function (articles) {
 			component.setArticles(articles);
 		}, function (error) {
 			console.log('[ERROR]', error)
