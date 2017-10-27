@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/SitePen/es-ts-need-to-know.git"
   },
-  "author": "Kitson Kelly <kkelly@sitepen.com>",
+  "author": "Nick Nisi <nick@sitepen.com>",
   "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/SitePen/es-ts-need-to-know/issues"
