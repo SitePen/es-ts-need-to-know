@@ -1,6 +1,16 @@
-import global from '@dojo/core/global';
-import { add as hasAdd, exists } from '@dojo/has/has';
 import { VirtualConsole } from 'jsdom';
+
+const global: any = (() => {
+	if (typeof global !== 'undefined') {
+		return global;
+	}
+	else if (typeof window !== 'undefined') {
+		return window;
+	}
+	else if (typeof self !== 'undefined') {
+		return self;
+	}
+})();
 
 /* In order to have the tests work under Node.js, we need to load JSDom and polyfill
  * requestAnimationFrame */
@@ -55,7 +65,7 @@ if (!('document' in global)) {
 	Object.defineProperty(
 		window.CSSStyleDeclaration.prototype,
 		'transition',
-		Object.getOwnPropertyDescriptor((<any> window).CSSStyleDeclaration.prototype, 'webkitTransition')
+		Object.getOwnPropertyDescriptor((<any> window).CSSStyleDeclaration.prototype, 'webkitTransition')!
 	);
 
 	/* Polyfill requestAnimationFrame - this can never be called an *actual* polyfill */
@@ -66,15 +76,9 @@ if (!('document' in global)) {
 	};
 
 	global.cancelAnimationFrame = () => {};
-
-	hasAdd('jsdom', true);
 }
 else {
 	doc = document;
-	/* istanbul ignore else */
-	if (!exists('jsdom')) {
-		hasAdd('jsdom', false);
-	}
 }
 
 export default doc;

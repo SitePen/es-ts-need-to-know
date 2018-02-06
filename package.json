@@ -4,6 +4,8 @@
   "description": "Live coding for ES6+ and TypeScript Need to Know Presentation",
   "main": "index.js",
   "scripts": {
+    "start": "grunt watch:dev",
+    "dev": "grunt dev",
     "test": "grunt test"
   },
   "repository": {
@@ -17,8 +19,6 @@
   },
   "homepage": "https://github.com/SitePen/es-ts-need-to-know#readme",
   "devDependencies": {
-    "@dojo/core": "next",
-    "@dojo/loader": "next",
     "@types/glob": "^5.0.30",
     "@types/grunt": "^0.4.21",
     "@types/jsdom": "^11.0.1",
@@ -35,17 +35,11 @@
     "grunt-tslint": "^5.0.1",
     "intern": "^3.4.5",
     "jsdom": "^11.1.0",
-    "postcss-cssnext": "^3.0.2",
-    "postcss-import": "^10.0.0",
-    "postcss-modules": "^0.8.0",
-    "remap-istanbul": "^0.9.5",
-    "ts-node": "^3.2.0",
+    "ts-node": "^3.3.0",
     "tslint": "^5.5.0",
-    "typescript": "^2.4.1"
+    "typescript": "^2.7.1"
   },
   "dependencies": {
-    "@dojo/has": "next",
-    "@dojo/shim": "next",
-    "moment": "^2.18.1"
+    "@dojo/loader": "^0.1.1"
   }
 }
