@@ -1,9 +1,9 @@
-import * as registerSuite from 'intern!object';
-import * as assert from 'intern/chai!assert';
+const { registerSuite } = intern.getInterface('object');
+const { assert } = intern.getPlugin('chai');
+
 import { toRelativeDate } from '../../src/util';
 
-registerSuite({
-	name: 'util',
+registerSuite('util', {
 	'toRelativeDate': {
 		'2 hours ago'() {
 			const time = Date.now();

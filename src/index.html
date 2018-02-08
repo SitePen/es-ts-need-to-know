@@ -88,16 +88,5 @@
 	<button type="button" name="load_articles" id="load_articles" disabled>Load Articles</button>
 
 	<div id="articles"></div>
-	<script src="../../node_modules/@dojo/loader/loader.min.js"></script>
-	<script>
-		require.config({
-			packages: [
-				{ name: 'src', location: '.', main: 'index' }
-			]
-		});
-
-		/* require the index module and init the application */
-		require([ 'src' ], function (src) { src.init(); });
-	</script>
 </body>
 </html>

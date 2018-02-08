@@ -4,9 +4,12 @@
   "description": "Live coding for ES6+ and TypeScript Need to Know Presentation",
   "main": "index.js",
   "scripts": {
-    "start": "grunt watch:dev",
-    "dev": "grunt dev",
-    "test": "grunt test"
+    "start": "npm-run-all clean --parallel watch serve",
+    "build": "webpack",
+    "clean": "rimraf dist/",
+    "test": "intern serveOnly",
+    "watch": "webpack --watch",
+    "serve": "http-server dist/ -p 8080"
   },
   "repository": {
     "type": "git",
@@ -19,27 +22,19 @@
   },
   "homepage": "https://github.com/SitePen/es-ts-need-to-know#readme",
   "devDependencies": {
-    "@types/glob": "^5.0.30",
-    "@types/grunt": "^0.4.21",
-    "@types/jsdom": "^11.0.1",
-    "@types/node": "^7.0.0",
     "codecov.io": "^0.1.6",
     "glob": "^7.1.2",
     "grunt": "^1.0.1",
-    "grunt-auto-install": "^0.3.1",
-    "grunt-contrib-clean": "^1.1.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-postcss": "^0.8.0",
-    "grunt-ts": "^6.0.0-beta.16",
-    "grunt-tslint": "^5.0.1",
-    "intern": "^3.4.5",
+    "html-webpack-plugin": "^2.30.1",
+    "http-server": "^0.11.1",
+    "intern": "^4.1.5",
     "jsdom": "^11.1.0",
-    "ts-node": "^3.3.0",
-    "tslint": "^5.5.0",
-    "typescript": "^2.7.1"
+    "npm-run-all": "^4.1.2",
+    "rimraf": "^2.6.2",
+    "ts-loader": "^3.5.0",
+    "tslint": "^5.9.1",
+    "typescript": "^2.7.1",
+    "webpack": "^3.10.0"
   },
-  "dependencies": {
-    "@dojo/loader": "^0.1.1"
-  }
+  "dependencies": {}
 }

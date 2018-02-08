@@ -1,5 +1,8 @@
-import * as registerSuite from 'intern!object';
+const { registerSuite } = intern.getInterface('object');
+const { assert } = intern.getPlugin('chai');
 
-registerSuite({
-	name: 'index'
+registerSuite('index', {
+	'simple test'() {
+		assert(true);
+	}
 });

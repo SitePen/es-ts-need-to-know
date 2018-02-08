@@ -1,7 +1,6 @@
-define([
-	'exports',
+require([
 	'./ArticlesComponent'
-], function (exports, ArticlesComponent) {
+], function (ArticlesComponent) {
 	var API_KEY = '2b88a66af2114afcb1f736a302d51998';
 
 	var newsSource = {
@@ -44,9 +43,7 @@ define([
 		});
 	}
 
-	exports.init = function () {
-		var articlesButton = document.getElementById('load_articles');
-		articlesButton.addEventListener('click', loadArticles)
-		articlesButton.removeAttribute('disabled');
-	};
+	var articlesButton = document.getElementById('load_articles');
+	articlesButton.addEventListener('click', loadArticles)
+	articlesButton.removeAttribute('disabled');
 });
