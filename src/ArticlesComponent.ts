@@ -10,7 +10,7 @@ export interface Article {
 
 export default class ArticlesComponent {
 	domNode: Element;
-	articles: Article[];
+	articles!: Article[];
 	constructor(domNode: Element | string = document.createElement('div'), articles: Article[] = []) {
 		if (typeof domNode === 'string') {
 			this.domNode = document.querySelector(domNode)!;
