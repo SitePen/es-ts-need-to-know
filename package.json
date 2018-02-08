@@ -2,7 +2,7 @@
   "name": "es-ts-need-to-know",
   "version": "1.0.0",
   "description": "Live coding for ES6+ and TypeScript Need to Know Presentation",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "npm-run-all clean --parallel watch serve",
     "build": "webpack",
