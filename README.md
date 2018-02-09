@@ -6,6 +6,8 @@ _ES6+ and TypeScript: What You Need to Know_.
 
 ## Example Overview
 
+![screenshot](screenshot.png)
+
 In this exercise, we start out with a very simple, working, vanilla JavaScript/ES5 application that is using the Aynchronous Module Definition (AMD) module system. This application renders a button that when pressed, fetches a list of articles from <https://newsapi.org> and then renders them, along with an image and the publish date relative to the user. Specifically, we start out with the following files:
 
 - `index` - The main entry point into the application. First, this instantiates a new ArticlesService class that will be used to fetch the articles data from the Internet and then sets up an event listener for the "Load Articles" button that will create a new ArticlesComponent and render the articles to the page after the content is fetched.
