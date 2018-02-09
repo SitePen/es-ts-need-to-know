@@ -1,8 +1,6 @@
 {
         "root": true,
-        "parser": "babel-eslint",
         "plugins": [
-            "react"
         ],
         "env": {
             "browser": true,
@@ -12,29 +10,21 @@
         },
         "ecmaFeatures": {
             "modules": true,
-            "jsx": true
+            "jsx": false
         },
-        "extends": "@sbg/eslint-config-sbg-ui",
+        "extends": "eslint:recommended",
 
     "rules": {
         "space-before-function-paren": 0,
         "one-var": 0,
-        "indent": 1,
+        "indent": ["error", "tab"],
         "no-unused-vars": 1,
         "no-debugger": 2,
         "no-dupe-keys": 2,
-        "no-console": 2,
+        "no-console": 0,
+        "no-tabs": 0,
         "max-nested-callbacks": ["warn", 5],
-        "react/jsx-no-duplicate-props": 2,
-        "react/jsx-max-props-per-line": 0,
-        "react/display-name": 0,
-        "react/jsx-no-bind": [1, {
-            "ignoreRefs": true,
-            "allowArrowFunctions": true,
-            "allowBind": true
-            }],
-        "react/jsx-handler-names": 0,
-        "react/prop-types": 0,
+        "semi": ["error", "always"],
         "prefer-template": 0,
         "no-nested-ternary": 0
     }

@@ -13,11 +13,11 @@ require([
 		service.getArticles(newsSource.VERGE, function (articles) {
 			component.setArticles(articles);
 		}, function (error) {
-			console.error('[ERROR]', error)
+			console.error('[ERROR]', error);
 		});
 	}
 
 	var articlesButton = document.getElementById('load_articles');
-	articlesButton.addEventListener('click', loadArticles)
+	articlesButton.addEventListener('click', loadArticles);
 	articlesButton.removeAttribute('disabled');
 });

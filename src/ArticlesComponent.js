@@ -32,8 +32,9 @@ define([
 	};
 
 	ArticlesComponent.prototype.renderArticle = function (article) {
-		var div = document.createElement('div')
+		var div = document.createElement('div');
 		div.className = 'article';
+		/* eslint-disable indent */
 		div.innerHTML = [
 			'<div class="image">',
 				'<img src="' + article.urlToImage + '" />',
@@ -50,6 +51,7 @@ define([
 				'</div>',
 			'</div>'
 		].join('\n');
+		/* eslint-enable indent */
 
 		return div;
 	};
