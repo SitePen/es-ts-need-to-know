@@ -1,0 +1,7 @@
+{
+	"environments": "chrome",
+	"coverage": "src/**/*.js",
+	"browser": {
+		"suites": "dist/tests.bundle.js"
+	}
+}

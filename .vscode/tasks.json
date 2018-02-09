@@ -19,6 +19,12 @@
 			"taskName": "test",
 			"args": [],
 			"isTestCommand": true
+		},
+		{
+			"taskName": "watch",
+			"command": "grunt",
+			"args": ["watch"],
+			"isShellCommand": true
 		}
 	]
 }

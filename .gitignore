@@ -1,7 +1,5 @@
-/.tscache
-!/.vscode
-/dev
-/dist
-/html-report
-/node_modules
+.tscache/
+dev/
+dist/
+node_modules/
 coverage-*.json

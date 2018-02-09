@@ -1,45 +1,44 @@
-export interface OriginalFunction<T> {
-	(...args: any[]): PromiseLike<T> | T;
-}
+export function toRelativeDate(isoString: string): string {
+	const date = new Date((isoString || '').replace(/-/g, '/').replace(/[TZ]/g, ' '));
+	const now = Date.now() + (new Date()).getTimezoneOffset() * 60000;
+	const diff = (now - date.getTime()) / 1000;
+	const dayDiff = Math.floor(diff / 86400);
 
-export interface PromisedFunction<T> {
-	(...args: any[]): Promise<T>;
-}
+	if (isNaN(dayDiff) || dayDiff < 0 || dayDiff >= 31) {
+		return '';
+	}
 
-/**
- * A function that returns a new function that will not be called until after a delay.
- *
- * The returned function will also return its value as a Promise.
- * @param callback The function to delay invoking
- * @param delay The delay, in milliseconds
- * @param thisArg The `this` to utilise
- */
-export function delay<T>(callback: OriginalFunction<T>, delay: number, thisArg?: any): PromisedFunction<T> {
-	return function (...args: any[]): Promise<T> {
-		return new Promise<T>((resolve, reject) => {
-			setTimeout(() => {
-				let result: any;
-				try {
-					result = callback.apply(thisArg, args);
-				}
-				catch (e) {
-					reject(e);
-					return;
-				}
-				if (isPromiseLike<any>(result)) {
-					return result.then(resolve, reject);
-				}
-				resolve(result);
-			}, delay);
-		});
-	};
-}
+	if (diff < 60) {
+		return 'just now';
+	}
 
-/**
- * A type guard which returns `true` if the `value` is _thenable_ (contains a property named `.then` which is a
- * `function`)
- * @param value The value to guard against
- */
-export function isPromiseLike<T>(value: any): value is PromiseLike<T> {
-	return Boolean(value && typeof value === 'object' && 'then' in value && typeof value.then === 'function');
+	if (diff < 120) {
+		return '1 minute ago';
+	}
+
+	if (diff < 3600) {
+		return Math.floor(diff / 60) + ' minutes ago';
+	}
+
+	if (diff < 7200) {
+		return '1 hour ago';
+	}
+
+	if (diff < 86400) {
+		return Math.floor(diff / 3600) + ' hours ago';
+	}
+
+	if (dayDiff === 1) {
+		return 'Yesterday';
+	}
+
+	if (dayDiff < 7) {
+		return dayDiff + ' days ago';
+	}
+
+	if (dayDiff < 31) {
+		return Math.ceil(dayDiff / 7) + ' weeks ago';
+	}
+
+	return '';
 }

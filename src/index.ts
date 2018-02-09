@@ -1,33 +1,21 @@
-import { delay } from './util';
+import ArticlesComponent from './ArticlesComponent';
+import ArticlesService, { NewsSource } from './ArticlesService';
 
-/**
- * A delayed function that sets the greeting text
- */
-const setGreetingText = delay((text: string) => {
-	const greeting = document.getElementById('greeting') as HTMLHeadElement;
-	greeting.textContent = text;
-}, 2000);
+// generate your own key at https://newsapi.org/register
+const API_KEY = '2b88a66af2114afcb1f736a302d51998';
+const service = new ArticlesService(API_KEY);
 
-/**
- * An event listener that sets the text of the greeting
- * @param evt The `click` mouse event
- */
-function clickMeClick(evt: MouseEvent) {
-	evt.preventDefault();
-	const clickMeButton = evt.target as HTMLButtonElement;
-	clickMeButton.setAttribute('disabled', 'disabled');
-
-	setGreetingText('Hello Enterprise JavaScript Summit!')
-		.then(function () {
-			clickMeButton.removeAttribute('disabled');
-		});
+async function loadArticles() {
+	const articlesDiv = document.getElementById('articles')!;
+	const component = new ArticlesComponent(articlesDiv);
+	try {
+		const articles = await service.fetchArticles(NewsSource.VERGE);
+		component.setArticles(articles);
+	} catch (error) {
+		console.log('[ERROR]', error);
+	}
 }
 
-/**
- * Function that initialises the application
- */
-export function init() {
-	const clickMeButton = document.getElementById('click_me') as HTMLButtonElement;
-	clickMeButton.addEventListener('click', clickMeClick);
-	clickMeButton.removeAttribute('disabled');
-}
+const articlesButton = document.getElementById('load_articles')!;
+articlesButton.addEventListener('click', loadArticles);
+articlesButton.removeAttribute('disabled');
