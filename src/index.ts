@@ -1,6 +1,7 @@
 import ArticlesComponent from './ArticlesComponent';
 import ArticlesService, { NewsSource } from './ArticlesService';
 
+// generate your own key at https://newsapi.org/register
 const API_KEY = '2b88a66af2114afcb1f736a302d51998';
 const service = new ArticlesService(API_KEY);
 
