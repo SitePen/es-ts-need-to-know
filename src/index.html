@@ -5,7 +5,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 	<style>
 		body {
-			background-color: #F6525D;
+			/* background-color: #F6525D; */
+			background-color: #779ecb;
 			color: #FDFCFD;
 			font-family: 'Roboto Slab', serif;
 			padding: 2em;
@@ -41,27 +42,51 @@
 			color: #A9A8AD;
 			cursor: auto;
 		}
+
+		.article {
+			text-align: left;
+			display: flex;
+			margin: 10px 0;
+		}
+
+		.article .image {
+			display: inline-block;
+			flex-grow: 0;
+		}
+		.article .image img {
+			max-height: 100px;
+		}
+		.article .content {
+			vertical-align: top;
+			display: inline-block;
+			flex-grow: 1;
+			padding: 0 10px;
+		}
+
+		.article .date {
+			font-size: 0.9em;
+			font-weight: normal;
+		}
+
+		.article .header {
+			font-weight: bold;
+			font-size: 1.2em;
+		}
+
+		.article .description {
+			font-size: 0.9em;
+		}
+
+		a, a:link, a:visited {
+			color: #FFFFFF;
+			text-decoration: none;
+		}
 	</style>
 </head>
 <body>
 	<h1>ES6+ and TypeScript: What You Need to Know</h1>
-	<h2 id="greeting">[ TODO: Replace Me ]</h2>
-	<button type="button" name="click_me" id="click_me" disabled>Click Me!</button>
+	<button type="button" name="load_articles" id="load_articles" disabled>Load Articles</button>
 
-	<!-- Loading and configuring the module loader -->
-	<script src="../../node_modules/@dojo/loader/loader.min.js"></script>
-	<script>
-		require.config({
-			packages: [
-				{ name: '@dojo', location: '../../node_modules/@dojo' },
-				{ name: 'dojo', location: '../../node_modules/intern/browser_modules/dojo' },
-				{ name: 'moment', location: '../../node_modules/moment', main: 'moment' },
-				{ name: 'src', location: '.', main: 'index' }
-			]
-		});
-
-		/* require the index module and init the application */
-		require([ 'src' ], function (src) { src.init(); });
-	</script>
+	<div id="articles"></div>
 </body>
 </html>
