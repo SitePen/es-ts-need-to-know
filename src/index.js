@@ -10,7 +10,7 @@ require([
 	function loadArticles() {
 		var articlesDiv = document.getElementById('articles');
 		var component = new ArticlesComponent(articlesDiv);
-		service.getArticles(newsSource.VERGE, function (articles) {
+		service.getArticles(newsSource.TNW, function (articles) {
 			component.setArticles(articles);
 		}, function (error) {
 			console.error('[ERROR]', error);

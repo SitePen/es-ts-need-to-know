@@ -8,7 +8,7 @@
     "build": "webpack",
     "clean": "rimraf dist/",
     "test": "intern serveOnly",
-    "watch": "webpack --watch",
+    "watch": "chokidar 'src/**/*.{ts,js}' -c 'webpack'",
     "serve": "http-server dist/ -p 8080"
   },
   "repository": {
@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/SitePen/es-ts-need-to-know#readme",
   "devDependencies": {
+    "chokidar-cli": "^1.2.0",
     "codecov.io": "^0.1.6",
     "eslint": "^4.17.0",
     "glob": "^7.1.2",
@@ -31,6 +32,7 @@
     "intern": "^4.1.5",
     "jsdom": "^11.1.0",
     "npm-run-all": "^4.1.2",
+    "prettier": "^1.11.1",
     "rimraf": "^2.6.2",
     "ts-loader": "^3.5.0",
     "tslint": "^5.9.1",

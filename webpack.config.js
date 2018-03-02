@@ -13,12 +13,10 @@ module.exports = {
 		filename: '[name].bundle.js'
 	},
 	module: {
-		rules: [
-			{ test: /\.tsx?$/, use: 'ts-loader' }
-		]
+		rules: [{ test: /\.tsx?$/, use: 'ts-loader' }]
 	},
 	resolve: {
-		extensions: [ '*', '.js', '.ts' ]
+		extensions: ['*', '.js', '.ts']
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
