@@ -8,12 +8,12 @@ _ES6+ and TypeScript: What You Need to Know_.
 
 ![screenshot](screenshot.png)
 
-In this exercise, we start out with a very simple, working, vanilla JavaScript/ES5 application that is using the Asynchronous Module Definition (AMD) module system. This application renders a button that when pressed, fetches a list of articles from <https://newsapi.org> and then renders them, along with an image and the publish date relative to the user. Specifically, we start out with the following files:
+In this exercise, we start out with a straightforward, working, vanilla JavaScript/ES5 application that is using the Asynchronous Module Definition (AMD) module system. This application renders a button that when pressed, fetches a list of articles from <https://newsapi.org> and then renders them, along with an image and the publish date relative to the user. Specifically, we start out with the following files:
 
 - `index` - The main entry point into the application. First, this instantiates a new ArticlesService class that will be used to fetch the article's data from the Internet and then sets up an event listener for the "Load Articles" button that will create a new ArticlesComponent and render the articles to the page after the content is fetched.
 - `util` - This file contains a simple utility to convert an ISO Date string into a relative date string.
-- `ArticlesService` - This module contains a very simple class that accepts a NewsAPI API key and provides a method, `getArticles`, which accepts a news source and success and error callbacks. This module also exports a `newsSource` object, which serves as a sort of enum providing predefined constants for the types of news sources.
-- `ArticlesComponent` - This is a very simple _Component_ class that provides a `render` method that will take a provided list of articles and render them to the page.
+- `ArticlesService` - This module contains a straightforward class that accepts a NewsAPI API key and provides a method, `getArticles`, which accepts a news source and success and error callbacks. This module also exports a `newsSource` object, which serves as a sort of enum providing predefined constants for the types of news sources.
+- `ArticlesComponent` - This is a straightforward _Component_ class that provides a `render` method that will take a provided list of articles and render them to the page.
 
 The goal of the exercise is to convert this project over to TypeScript and to utilize ES2015+ features along the way.
 
@@ -25,7 +25,7 @@ In this exercise, we will convert this ES5/AMD application to TypeScript and uti
 npm install
 ```
 
-This application is completely standalone and has no production dependencies. The build tools included will compile the AMD application into a Webpack bundle and generate the HTML output. The `package.json` file defines a number of scripts which will simplify the tools needed to run this application in its ES5/AMD form and along the transformation to TypeScript.
+This application is completely standalone and has no production dependencies. The build tools included will compile the AMD application into a Webpack bundle and generate the HTML output. The `package.json` file defines several scripts which will simplify the tools needed to run this application in its ES5/AMD form and along the transformation to TypeScript.
 
 ### Scripts
 
@@ -46,7 +46,7 @@ The following ES2015+ and TypeScript features are covered and discussed as part 
 - [Advanced Types](https://www.typescriptlang.org/docs/handbook/advanced-types.html) - We'll see how union types can help us better describe our code.
 - [Enums](https://www.typescriptlang.org/docs/handbook/enums.html) - Utilizing this TypeScript data structure, we'll define a set of named constants for our news sources.
 - [Interfaces](https://www.typescriptlang.org/docs/handbook/interfaces.html) - We'll define an interface to describe the data coming back from NewsAPI in a typesafe way.
-- [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) - JavaScript's class syntax makes working with classes much simpler. This will clean up our code a lot.
+- [Classes](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes) - JavaScript's class syntax makes working with classes much simpler, cleaning up our code.
 - [TypeScript Classes](https://www.typescriptlang.org/docs/handbook/classes.html) - We'll go beyond ES classes and utilize wonderful TypeScript class features including modifiers and non-method properties.
 - [Template Literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals) - We will utilize template literals to remove ugly concatenation and utilize it for generating multi-line templates.
 - [Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) - We'll simplify inline functions with this smaller syntax.
@@ -58,4 +58,5 @@ The following ES2015+ and TypeScript features are covered and discussed as part 
 
 ## Licensing Information
 
-© 2018 [JS Foundation](https://js.foundation/) & contributors. [New BSD](https://opensource.org/licenses/BSD-3-Clause) license.
+ [New BSD](https://opensource.org/licenses/BSD-3-Clause) license.
+
