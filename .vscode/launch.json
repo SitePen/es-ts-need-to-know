@@ -2,30 +2,19 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"type": "node",
-			"request": "launch",
-			"name": "Test (unit in NodeJS)",
-			"program": "${workspaceRoot}/node_modules/.bin/intern-client",
-			"args": [
-				"reporters=${workspaceRoot}/support/intern/Reporter",
-				"config=dev/tests/intern",
-				"excludeInstrumentation=."
-			],
-			"preLaunchTask": "default"
-		}, {
 			"type": "chrome",
 			"request": "launch",
-			"name": "Test (unit in Chrome)",
-			"url": "http://rugen.local/es-ts-need-to-know/node_modules/intern/client.html?config=dev/tests/intern",
-			"webRoot": "${workspaceRoot}/..",
-			"preLaunchTask": "default"
-		}, {
-			"type": "chrome",
-			"request": "launch",
-			"name": "Launch",
-			"url": "http://rugen.local/es-ts-need-to-know/dev/src",
-			"webRoot": "${workspaceRoot}/..",
-			"preLaunchTask": "default"
+			"name": "Launch Chrome",
+			"disableNetworkCache": true,
+			"url": "http://localhost:8080",
+			"sourceMaps": true,
+			"webRoot": "${workspaceRoot}/dist",
+			"sourceMapPathOverrides": {
+				"webpack:///*": "${workspaceRoot}/*",
+				"webpack:///./*": "${workspaceRoot}/*",
+				"webpack:///src/*": "${workspaceRoot}/src/*",
+				"webpack:///./~/*": "${workspaceRoot}/node_modules/*"
+			}
 		}
 	]
 }
